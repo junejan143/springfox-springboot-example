@@ -39,7 +39,7 @@ public class NecServerApplication {
                 .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 .paths(PathSelectors.any())
                 .build()
-                .apiInfo(new ApiInfo("基础框架", "这是一个项目的基础框架结构，构建新项目可以在这个基础上搭建","1.0","apiDocs",new Contact("章源辰","","13338073698@163.com"),"License","/License"))
+                .apiInfo(new ApiInfo("基础框架", "这是一个spring-boot集成swagger的框架，传输的是json文件到远程服务器，待补充","1.0","apiDocs",new Contact("章源辰","","13338073698@163.com"),"License","/License"))
                 .pathMapping("/") //2
                 .directModelSubstitute(LocalDate.class, //3
                         String.class)
