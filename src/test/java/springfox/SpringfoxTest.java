@@ -57,10 +57,16 @@ public class SpringfoxTest {
                 .andExpect(status().isOk())
                 .andReturn();
 
+
+        //直接生成swagger.json文件
+        /*  MvcResult mvcResult = this.mockMvc.perform(MockMvcRequestBuilders.get("/v2/api-docs").accept("application/json;charset=utf-8"))
+                .andDo(SwaggerResultHandler.outputDirectory("src/test/java").build())
+                .andExpect(status().isOk())
+                .andReturn();*/
+
         MockHttpServletResponse response = mvcResult.getResponse();
         String swaggerJson = response.getContentAsString();
         swaggerJson = swaggerJson.replace("\"status\":200,\"message\":\"\",\"data\":", "");
-        swaggerJson = swaggerJson.substring(0, swaggerJson.length());
 
         String filePath = "src/test/data.json";
         HttpClient httpClient = HttpClients.createDefault();

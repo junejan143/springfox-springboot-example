@@ -16,7 +16,6 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
-    @ApiOperation(value = "创建用户")
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/user" , method = RequestMethod.POST)
     public int createUser(@Valid @RequestBody User user){
@@ -24,7 +23,6 @@ public class UserController {
         return 1;
     }
 
-    @ApiOperation(value = "获取某个用户的信息")
     @RequestMapping(value = "/user/{userId}" , method = RequestMethod.GET)
     public User getUser(@Valid @PathVariable int userId){
         return userService.getUser(userId);
