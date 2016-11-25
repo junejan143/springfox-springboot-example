@@ -1,6 +1,5 @@
 package com.gemini;
 
-import io.swagger.annotations.Api;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -35,9 +34,9 @@ public class NecServerApplication {
     @Bean
     public Docket docketApi() {
         Docket docket = new Docket(DocumentationType.SWAGGER_2)
-                .groupName("user") //?group=test
+                //.groupName("user") //?group=test
                 .select().apis(RequestHandlerSelectors.any()) //1
-                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+                .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(new ApiInfo("基础框架测试", "这是一个spring-boot集成swagger的框架，传输的是json文件到远程服务器，待补充","1.0","apiDocs",new Contact("章源辰","","13338073698@163.com"),"License","/License"))

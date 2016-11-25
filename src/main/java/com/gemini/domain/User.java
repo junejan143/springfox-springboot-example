@@ -3,7 +3,7 @@ package com.gemini.domain;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * @author 章源辰
+ * @author zychen
  * @time: 2016/11/2 16:8
  * @describion:
  */
